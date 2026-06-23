@@ -22,6 +22,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
+
+app.get('/', (req, res) => res.json({ status: 'ok', message: 'BookVerse API is running' }));
 app.use(express.json());
 
 let db;
